@@ -162,7 +162,7 @@ Let's walk through what happens when a FITS file is uploaded to the source bucke
 ### How to Create a layer for the lambda function
 
 ```
-$ mkdir resoures_layer
+$ mkdir resources_layer
 $ mkdir python
 $ pip install aws_cdk.aws_lambda aws_cdk.aws_s3
 $ pip install astropy --target python
