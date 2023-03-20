@@ -164,8 +164,8 @@ Let's walk through what happens when a FITS file is uploaded to the source bucke
 ```
 $ mkdir resources_layer
 $ mkdir python
-$ pip install aws_cdk.aws_lambda aws_cdk.aws_s3
-$ pip install astropy --target python
+$ pip3 install aws_cdk.aws_lambda aws_cdk.aws_s3
+$ pip3 install astropy --target python
 $ zip -r9 resources_layer/astropy.zip python
 ```
 use resources_layer/astropy.zip to create a new layer
