@@ -66,10 +66,10 @@ If you are a Windows platform, you would activate the virtualenv like this:
 Once the virtualenv is activated, you can install the required dependencies.
 
 ```
-$ pip install -r requirements.txt
+$ pip3 install -r requirements.txt
 ```
 To add additional dependencies, for example other CDK libraries, just add
-them to your `setup.py` file and rerun the `pip install -r requirements.txt`
+them to your `setup.py` file and rerun the `pip3 install -r requirements.txt`
 command.
 
 #### Step 2. Modify project parameters in app.py
