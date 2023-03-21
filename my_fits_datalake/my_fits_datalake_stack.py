@@ -118,8 +118,8 @@ class MyFitsDatalakeStack(core.Stack):
             assumed_by=iam_.ServicePrincipal('glue.amazonaws.com'),
             managed_policies= [iam_.ManagedPolicy.from_managed_policy_arn(self, 'MyFitsCrawlerGlueRole', managed_policy_arn='arn:aws:iam::aws:policy/service-role/AWSGlueServiceRole')]
         )
-        # glue role needs "*" read/write - otherwise crawler will not be able to create tables (and no error messages in crawler logs)
-        glue_role.add_to_policy(iam_.PolicyStatement( actions=['s3:GetObject', 's3:PutObject', 'lakeformation:GetDataAccess'], effect=iam_.Effect.ALLOW, resources=['*']))
+        # glue role needs "*" read/write - otherwise crawler will not be able to create tables (and no error messages in crawler logs). The new glue interactive session requires iam:PassRole for the notebook
+        glue_role.add_to_policy(iam_.PolicyStatement( actions=['s3:GetObject', 's3:PutObject', 'lakeformation:GetDataAccess', 'iam:PassRole'], effect=iam_.Effect.ALLOW, resources=['*']))
         
         # Step 2. create a database in data catalog
         db=glue_.Database(self, "MyFitsDatabase", database_name=glue_database_name)
